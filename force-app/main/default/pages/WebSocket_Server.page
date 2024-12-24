@@ -1,0 +1,64 @@
+<apex:page >
+<html>
+<head>
+   <script type="text/javascript" src="http://na11.salesforce.com/support/api/28.0/interaction.js"></script>
+   <script type="text/javascript">
+       var callback = function (response) {
+           if (response.result) {
+              alert('Screen pop was set successfully.');
+           }
+           else {
+              alert('Screen pop failed.' + result.error);
+           }
+        };
+       function screenPop() {
+                //Invokes API method
+                sforce.interaction.screenPop('/001x0000003DGQR', true, callback);
+        }
+</script>
+
+
+        <script type="text/javascript">
+            var webSocket;
+            var data = "";
+
+            function openSocket()
+            {
+                // Open server socket
+                if (webSocket !== undefined && webSocket.readyState !== WebSocket.CLOSED) {
+                    alert("WebSocket is already opened");
+                    return;
+                }
+
+                webSocket = new WebSocket("ws://xxx.xxx.xxx.xxx:8080/sample/sampleendpoint");
+
+                if (webSocket === undefined)
+                {
+                    alert("Error creating socket...");
+                    return;
+                }
+
+                webSocket.onopen = function()
+                {
+                    alert("in onopen callback");
+                }
+
+                webSocket.onmessage = function(event)
+                {
+                    alert("in onmessage callback   " + data);
+                }
+
+                webSocket.onclose = function()
+                {
+                    alert("in onclose callback");
+                }
+            }
+
+        </script>
+
+</head>
+<body>
+       <button onclick="openSocket();">Open Socket</button>
+</body>
+</html>
+</apex:page>

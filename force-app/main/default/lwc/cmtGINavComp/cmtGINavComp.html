@@ -1,0 +1,71 @@
+<template>
+    <!-- Desktop Navigation Bar -->
+    <div class="navbar">
+        <div class="left-section">
+            <div class="logo">
+                <img src={navLogo} alt="Company Logo" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#" onclick={toggleDropdown} class="dropdown-toggle">
+                            About Us &#9660;
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="#">Culture</a></li>
+                            <li><a href="#">Regulatory</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick={toggleDropdown} class="dropdown-toggle">
+                            Services &#9660;
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="#">Gallium Funds and Indices</a></li>
+                            <li><a href="#">Investment Advisory</a></li>
+                            <li><a href="#">Consultancy</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="login">
+                <a href="#" class="login-btn">Log In</a>
+            </div>
+            <div class="hamburger" onclick={toggleMenu}>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" if:true={isMenuOpen}>
+        <div class="close-icon" onclick={toggleMenu}>✖</div>
+        <ul>
+            <li>About Us
+                <ul>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Regulatory</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Leadership</a></li>
+                </ul>
+            </li>
+            <li>Services
+                <ul>
+                    <li><a href="#">Gallium Funds and Indices</a></li>
+                    <li><a href="#">Investment Advisory</a></li>
+                    <li><a href="#">Consultancy</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+</template>

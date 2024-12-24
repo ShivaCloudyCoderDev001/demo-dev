@@ -1,0 +1,57 @@
+/* Style for desktop */
+.image-container {
+  width: 100%;
+  height: auto; /* Full height of the viewport */
+  overflow: hidden;
+  background: #00081f;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+.logo-image {
+  width: 2%;
+}
+
+.gallium-logo-image {
+  width: 15%
+}
+
+/* Style for mobile */
+@media screen and (max-width: 768px) {
+  .responsive-image {
+      width: 100vw; /* Full viewport width */
+      height: 100vh;
+      object-fit: cover; /* Crops the sides of the image */
+      object-position: 58%;
+  }
+
+  div.scroll-container {
+    background-color: #333;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  div.scroll-container .image-item {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    color: white; /* Text color for captions */
+  }
+  
+  div.scroll-container img {
+    display: block;
+    width: 200px; /* Set a fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .image-caption {
+    margin-top: 5px;
+    font-size: 14px; /* Customize the font size */
+  }
+  
+}
